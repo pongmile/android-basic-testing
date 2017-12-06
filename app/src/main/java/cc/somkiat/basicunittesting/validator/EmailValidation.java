@@ -33,7 +33,6 @@ public class EmailValidation {
         if(!email.isEmpty())
             return true;
         throw new ValidateException("Name is Empty String, Please input again");
-
     }
 
     public boolean emailFormat() throws ValidateException {

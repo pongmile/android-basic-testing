@@ -32,8 +32,9 @@ public class NameValidation {
     }
 
     public boolean nameFormat() throws ValidateException {
-        if(!Pattern.matches("^[a-zA-Z]+$", this.name)){
-            throw new ValidateException("Name is Alphabet Characters, Please input again");
+        String namePattern = "[a-zA-Z]+ ?[a-zA-Z]+";
+        if (!Pattern.matches(namePattern, name)) {
+            throw new ValidateException("Name Pattern is incorrect");
         }
         return true;
     }
