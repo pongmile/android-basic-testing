@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     NameValidation nameValidator;
     EmailValidation emailValidator;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayResult(boolean nameResult, boolean emailResult) {
-        if (!nameResult.isValid()) {
-            Toast.makeText(this, nameResult.getMessage(), Toast.LENGTH_SHORT).show();
+        if (!nameResult) {
+            Toast.makeText(this, (CharSequence) nameValidator, Toast.LENGTH_SHORT).show();
         }
 
-        if (!emailResult.isValid()) {
-            Toast.makeText(this, emailResult.getMessage(), Toast.LENGTH_SHORT).show();
+        if (!emailResult) {
+            Toast.makeText(this, (CharSequence) emailValidator, Toast.LENGTH_SHORT).show();
         }
     }
 }
